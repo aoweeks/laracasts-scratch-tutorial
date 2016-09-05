@@ -5,8 +5,10 @@
     
     @foreach ($cards as $card)
         <div>
+            <a href="/cards/{{ $card->id }}">
             {{ $card->title }}
             {{ $card->created_at }}
+            </a>
         </div>
     @endforeach
 @stop
