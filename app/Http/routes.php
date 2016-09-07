@@ -30,3 +30,25 @@ Route::patch('notes/{note}', 'NotesController@update');
 Route::auth();
 
 Route::get('/dashboard', 'HomeController@index');
+
+
+Route::get('foobar', function(){
+    $user = new App\User;
+    
+    $user->name = "JohnAdministratorDoe";
+    $user->email = "john@example.com";
+    $user->password = bcrypt('password');
+    $user->save();
+    
+    return 'Done'; 
+});
+
+Route::get('/', function(){
+    return view ('welcome');
+});
+
+
+Route::get('begin', function() {
+    Session::flash('status', 'Hello There');
+    return redirect('/');
+});

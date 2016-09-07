@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="container">
+    @if(Session::has('status'))
+        <h3>{{ Session::get('status') }}</h3>
+    @endif
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
