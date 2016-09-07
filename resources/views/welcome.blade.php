@@ -1,10 +1,31 @@
 @extends('layouts.app')
 
+
+<style>
+    .Alert{
+        background: #e3e3e3;
+    }
+    
+    .Alert--Info{
+        background: #e3e3e3;
+    }
+    
+    .Alert--Success{
+        background: #73ca73;
+        color: white;
+    }
+    
+    .Alert--Error{
+        background: red;
+        color: white;
+    }
+</style>
+
+
 @section('content')
 <div class="container">
-    @if(Session::has('status'))
-        <h3>{{ Session::get('status') }}</h3>
-    @endif
+    @include ('flash')
+    
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">

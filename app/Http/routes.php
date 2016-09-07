@@ -49,6 +49,6 @@ Route::get('/', function(){
 
 
 Route::get('begin', function() {
-    Session::flash('status', 'Hello There');
+    flash('You are now signed in!', 'Success');
     return redirect('/');
 });
